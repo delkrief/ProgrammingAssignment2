@@ -1,5 +1,5 @@
-## write a pair of functions that create a matrix andd cache the inverted matrix
-##his function creates a special "matrix" object that can cache its inverse. can compute inverse with solve(x)
+## write a pair of functions that create a matrix and cache the inverted matrix
+##this function creates a special "matrix" object that can cache its inverse. can compute inverse with solve(x)
 #  use the <<- operator to assign a value to an object that is from a different environment
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -17,7 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+   ## Return a matrix that is the inverse of 'x'
   #This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
   #If the inverse has already been calculated (and the matrix has not changed), 
   #then the cachesolve should retrieve the inverse from the cache.
@@ -28,7 +28,7 @@ cacheSolve <- function(x, ...) {
     return(inv)
     
   }
-  #otherwide, calculate the inverse, cache it and return it
+  #otherwise, calculate the inverse, cache it and return it
   data <- x$get()
   inv <-solve(data, ...)
   x$setinv(inv)
